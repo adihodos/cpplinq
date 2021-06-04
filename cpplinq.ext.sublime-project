@@ -1,0 +1,59 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+		}
+    ],
+	"settings":
+    {
+        "cmake":
+        {
+            "build_folder": "$folder/build.subl",
+            "command_line_overrides":
+            {
+                "BUILD_SHARED_LIBS": true,
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+            },
+            "generator": "Ninja",
+        },
+    },
+    "build_systems":
+    [
+		{
+			"file_regex": "(.+[^:]):(\\d+):(\\d+): (?:fatal )?((?:error|warning): .+)$",
+			"name": "cpplinq.ext (Linux)",
+			"shell_cmd": "cmake --build .",
+			"syntax": "Packages/CMakeBuilder/Syntax/Ninja.sublime-syntax",
+			"variants":
+			[
+				{
+					"name": "rebuild_cache",
+					"shell_cmd": "cmake --build . --target rebuild_cache"
+				},
+				{
+					"name": "tests/rebuild_cache",
+					"shell_cmd": "cmake --build . --target tests/rebuild_cache"
+				},
+				{
+					"name": "_deps/catch2-build/rebuild_cache",
+					"shell_cmd": "cmake --build . --target _deps/catch2-build/rebuild_cache"
+				},
+				{
+					"name": "cpplinq-tests",
+					"shell_cmd": "cmake --build . --target cpplinq-tests"
+				},
+				{
+					"name": "all",
+					"shell_cmd": "cmake --build . --target all"
+				},
+				{
+					"name": "clean",
+					"shell_cmd": "cmake --build . --target clean"
+				}
+			],
+			"working_dir": "$folder/build.subl"
+		}
+	],
+}

@@ -1,0 +1,7 @@
+{
+	"cmake.configureArgs": [
+		"-DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE"
+	],
+	"cmake.generator": "Ninja",
+	"clangd.semanticHighlighting": true,
+}
